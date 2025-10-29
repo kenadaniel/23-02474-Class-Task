@@ -1,0 +1,25 @@
+Module GradeCalculator
+    Sub Main()
+        Dim marks(4) As Integer
+        Dim total As Integer = 0
+        Dim average As Double
+        Dim grade As Char
+
+        ' Input marks for 5 subjects
+        For i As Integer = 0 To 4
+            Console.Write("Enter marks for subject {0}: ", i + 1)
+            marks(i) = Convert.ToInt32(Console.ReadLine())
+            total += marks(i)
+        Next
+
+        ' Calculate average
+        average = total / 5
+
+        ' Determine grade using Select Case
+        Select Case average
+            Case 0 To 40
+                grade = "E"c
+            Case 41 To 60
+                grade = "D"c
+            Case 61 To 80
+                grade = "C"
